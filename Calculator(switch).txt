@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main() {
+    int val,a,b,r;
+    printf("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\nEnter the option");
+    scanf("%d",&val);
+    
+    printf("enter the first number");
+    scanf("%d",&a);
+    printf("enter the second number");
+    scanf("%d",&b);
+
+    switch(val)
+    {
+        case 1:
+        {
+            r=a+b;
+            printf("result=%d",r);
+            break;
+        }
+        case 2:
+        {
+            r=a-b;
+            printf("result=%d",r);
+            break;
+
+        }
+        case 3:
+        {
+            r=a*b;
+            printf("result=%d",r);
+            break;
+
+        }
+        case 4:
+        {
+            r=a/b;
+            printf("result=%d",r);
+            break;
+        }
+        default:
+        {
+            printf("invalid option");
+        }
+    }
+}
