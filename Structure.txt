@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+struct exam
+{
+    char name[20];
+    int id;
+    int mark;
+}a;
+int main()
+{
+    strcpy(a.name,"sai");
+    a.id=100;
+    a.mark=120;
+    printf("name = %s\n",a.name);
+    printf("id = %d\n",a.id);
+    printf("mark = %d\n",a.mark);
+   
+}
