@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int swap(int,int);
+int main() {
+    int a=20,b=40;
+    printf("before swapping a=%d b=%d\n",a,b);
+    swap(a,b);//actual argument
+    printf("after swaping a=%d b=%d\n",a,b);
+}
+int swap(int a,int b)//formal argument
+{
+    int temp;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    printf("after swaping a=%d b=%d\n",a,b);
+    
+}
