@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    char string[]="Let's learn about string";
+    printf("%s\n",string);
+    char str[6]={'h','a','i','i','\0'};
+    for(int i=0;i<4;i++)
+    {
+            printf("%c",str[i]);
+    }
+    
+}
