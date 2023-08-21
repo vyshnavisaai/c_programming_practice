@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int add(int n,int key,int a[],int pos)
+{
+    for(int i=n-1;i>=pos;i--)
+    {
+        a[i+1]=a[i];
+    }
+a[pos]=key;
+    
+}
+int main()
+{
+    
+    int a[20]={1,3,5,7,9,11};
+    int n=6;
+    printf("before insertion :");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d  ",a[i]);
+    }
+    
+    int key=20,pos=3;
+    add(n,key,a,pos);
+    n++;
+    printf("\nafter insertion  :");
+
+    for(int i=0;i<n;i++)
+    {
+     printf("%d  ",a[i]);
+    }
+    
+}
