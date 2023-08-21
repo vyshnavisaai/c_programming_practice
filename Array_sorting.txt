@@ -1,0 +1,25 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() 
+{
+    int i,j,temp;
+    int a[10]={2,4,1,6,10,8,13,23,9,5};
+    for(i=0;i<10;i++)
+    {
+        for(j=i+1;j<10;j++)
+        {
+            if(a[j]<a[i])
+            {
+                temp=a[j];
+                a[j]=a[i];
+                a[i]=temp;
+            }
+        }
+    }
+    printf("the sorted array -");
+    for(i=0;i<10;i++)
+    {
+        printf("%d  ",a[i]);
+    }
+}
