@@ -15,9 +15,9 @@ int deletion(int a[],int n,int key)
 
         a[i]=a[i+1];
     return n-1;
-
         
 }
+
 
 int find(int a[], int low, int high, int key)
 {
