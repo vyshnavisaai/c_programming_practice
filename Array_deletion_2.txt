@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+
+int deletion(int a[],int n,int key)
+{
+    int pos=find(a,0,n-1,key);
+    if (pos==-1)
+    {
+        printf("not found");
+        return n;
+    }
+    
+
+    for(int i=pos;i<n-1;i++)
+
+        a[i]=a[i+1];
+    return n-1;
+
+        
+}
+
+int find(int a[], int low, int high, int key)
+{
+    if(high<low)
+    {
+        return -1;
+    }
+    int mid=(high+low)/2;
+    if (key==a[mid])
+    {
+        return mid;
+    }
+    if (key>a[mid])
+    {
+        return find(a,mid+1,high,key);
+    }
+    return find(a,low,mid-1,key);
+    
+}
+
+
+int main()
+{
+    int key,i;
+    int a[]={22,33,44,55,66};
+    int n=sizeof(a)/sizeof(a[0]);
+    key=55;
+    printf("before deletion - ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    n=deletion(a,n,key);
+    printf("\nafter deletion - ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
