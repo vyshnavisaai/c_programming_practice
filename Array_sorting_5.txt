@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void merge(int a[], int beg, int mid, int end)
+{
+	int i, j, k;
+	int n1 = mid - beg + 1;
+	int n2 = end - mid;
+
+	int L[n1], R[n2];
+
+	// Copy data to temp arrays L[] and R[]
+	for (i = 0; i < n1; i++)
+		L[i] = a[beg + i];
+	for (j = 0; j < n2; j++)
+		R[j] = a[mid + 1 + j];
+
+	// Merge the temp arrays back into arr[l..r
+	i = 0;
+	j = 0;
+	k = beg;
+	while (i < n1 && j < n2) {
+		if (L[i] <= R[j]) {
+			a[k] = L[i];
+			i++;
+		}
+		else {
+			a[k] = R[j];
+			j++;
+		}
+		k++;
+	}
+
+	// Copy the remaining elements of L[],
+	// if there are any
+	while (i < n1) {
+		a[k] = L[i];
+		i++;
+		k++;
+	}
+
+	// Copy the remaining elements of R[],
+	// if there are any
+	while (j < n2) {
+		a[k] = R[j];
+		j++;
+		k++;
+	}
+}
+
+// l is for left index and r is right index of the
+// sub-array of arr to be sorted
+void mergeSort(int a[], int beg, int end)
+{
+	if (beg < end) {
+		int mid =  + (beg +end) / 2;
+
+		// Sort first and second halves
+		mergeSort(a, beg, mid);
+		mergeSort(a, mid + 1, end);
+
+		merge(a, beg, mid, end);
+	}
+}
+
+// Driver code
+int main()
+{
+	int a[] = { 12, 11, 13, 5, 6, 7 };
+	int size = sizeof(a) / sizeof(a[0]);
+
+	printf("Given array is \n");
+	int i;
+	for (i = 0; i < size; i++)
+		printf("%d ", a[i]);
+	printf("\n");
+
+	mergeSort(a, 0, size - 1);
+
+	printf("\nSorted array is \n");
+	for (i = 0; i < size; i++)
+		printf("%d ", a[i]);
+	printf("\n");	
+	return 0;
+}
